@@ -1,0 +1,14 @@
+
+<%= link_to "Photo Gallery",  photos_path %><br />
+<%= link_to "Create new profile",  new_post_path %>
+
+<% if @posts == [] %>
+    <p>Create new post</p>
+<% else %>
+    <% @posts.each do |post| %>
+       <b><%= post.title %></b><br />
+       <%= post.body %></p>
+       <p><%= link_to "Read More", post_path(post.id) %></p>
+   <hr>
+    <% end %>
+<% end %>
